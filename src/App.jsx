@@ -1,16 +1,34 @@
-import { useState } from 'react'
-
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { store } from './store';
+import './i18n';
+import Login from './components/Login';
+import Register from './components/Register';
+import Dashboard from './components/Dashboard';
+import LanguageToggle from './components/LanguageToggle';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        hello 
+    <Provider store={store}>
+      <Router>
+        <div className="min-h-screen bg-gray-50">
+          <nav className="bg-white shadow">
+            <div className="max-w-7xl mx-auto px-4 py-4 flex justify-end">
+              <LanguageToggle />
+            </div>
+          </nav>
+          
+          <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/" element={<Login />} />
+          </Routes>
         </div>
-    </>
-  )
+      </Router>
+    </Provider>
+  );
 }
 
-export default App
+export default App;
