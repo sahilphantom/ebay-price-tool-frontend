@@ -15,7 +15,7 @@ const Dashboard = () => {
     // Simulate fetching eBay accounts
     setEbayAccounts([
       {
-        id: '1',
+        id: '64a1b2c3d4e5f67890123456',
         ebayAccountId: 'ebay_user_123',
         isActive: true,
         createdAt: new Date()
@@ -87,6 +87,7 @@ const Dashboard = () => {
                     <div>
                       <p className="font-medium">eBay ID: {account.ebayAccountId}</p>
                       <p className="text-sm text-gray-500">Connected: {account.createdAt.toLocaleDateString()}</p>
+                      <p className="text-xs text-gray-400">ID: {account.id}</p>
                     </div>
                     <button
                       onClick={() => handleDisconnectEbay(account.id)}
