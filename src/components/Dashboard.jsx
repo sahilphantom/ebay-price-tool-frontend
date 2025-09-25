@@ -29,8 +29,8 @@ const Dashboard = () => {
   };
 
   const handleConnectEbay = () => {
-    // Redirect to eBay OAuth URL
-    window.open('http://localhost:5000/api/ebay/auth-url', '_blank');
+    // Redirect to credential form
+    navigate('/ebay-credentials');
   };
 
   const handleDisconnectEbay = (accountId) => {
