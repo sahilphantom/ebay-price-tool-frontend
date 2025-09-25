@@ -6,8 +6,11 @@ import './i18n';
 import Login from './components/Login';
 import Register from './components/Register';
 import Dashboard from './components/Dashboard';
-import EbayCredentialForm from './components/EbayCredentialForm';
+import EbayAccountManager from './components/EbayAccountManagement';
+import CompetitorSearch from './components/CompetitorSearch';
+import PricingRules from './components/PricingRules';
 import LanguageToggle from './components/LanguageToggle';
+import EbayAccountManagement from './components/EbayAccountManagement';
 
 function App() {
   return (
@@ -24,7 +27,9 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/ebay-credentials" element={<EbayCredentialForm />} />
+            <Route path="/ebay-setup" element={<EbayAccountManagement />} />
+            <Route path="/competitors" element={<CompetitorSearch />} />
+            <Route path="/pricing-rules" element={<PricingRules />} />
             <Route path="/" element={<Login />} />
           </Routes>
         </div>
